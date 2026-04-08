@@ -1,0 +1,13 @@
+{
+  "name": "x",
+  "description": "X Twitter API v2",
+  "baseURL": "https://api.x.com/2",
+  "documentURL": "",
+  "iconURL": "https://icons.hasmcp.com/icons/providers/09TFNMulhug/icon.png",
+  "secretPrefix": "API_X_COM",
+  "verificationStatus": 2,
+  "apiType": 1,
+  "oauth2Enabled": false,
+  "oauth2ClientID": "***",
+  "oauth2ClientSecret": "***"
+}

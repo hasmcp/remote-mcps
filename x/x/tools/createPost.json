@@ -1,0 +1,117 @@
+{
+  "name": "createPost",
+  "title": "Create Post",
+  "description": "Create a new post on X. At least one of text, media, or poll must be provided.",
+  "method": 3,
+  "path": "/tweets",
+  "reqBodyJSONSchema": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Tweet text content (max 280 chars)"
+      },
+      "reply": {
+        "type": "object",
+        "description": "Reply configuration",
+        "properties": {
+          "in_reply_to_tweet_id": {
+            "type": "string",
+            "description": "Tweet ID to reply to (1-19 digits)"
+          },
+          "exclude_reply_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "User IDs to exclude from reply thread"
+          }
+        }
+      },
+      "quote_tweet_id": {
+        "type": "string",
+        "description": "Tweet ID to quote (1-19 digits). Mutually exclusive with media, poll, card_uri."
+      },
+      "reply_settings": {
+        "type": "string",
+        "description": "Who can reply: following, mentionedUsers, subscribers, or verified"
+      },
+      "media": {
+        "type": "object",
+        "description": "Media attachment. Mutually exclusive with poll, quote_tweet_id, card_uri.",
+        "properties": {
+          "media_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "1-4 media IDs to attach"
+          },
+          "tagged_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "0-10 user IDs to tag in media"
+          }
+        }
+      },
+      "poll": {
+        "type": "object",
+        "description": "Poll configuration. Mutually exclusive with media, quote_tweet_id, card_uri.",
+        "properties": {
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "2-4 poll options (each 1-25 chars)"
+          },
+          "duration_minutes": {
+            "type": "integer",
+            "description": "Poll duration in minutes (5-10080)"
+          },
+          "reply_settings": {
+            "type": "string",
+            "description": "Who can reply: following, mentionedUsers, subscribers, verified"
+          }
+        }
+      },
+      "geo": {
+        "type": "object",
+        "description": "Location tag",
+        "properties": {
+          "place_id": {
+            "type": "string",
+            "description": "Place ID to tag"
+          }
+        }
+      },
+      "for_super_followers_only": {
+        "type": "boolean",
+        "description": "Limit post visibility to Super Followers only"
+      },
+      "nullcast": {
+        "type": "boolean",
+        "description": "Do not include in public timeline (Promoted-only)"
+      },
+      "made_with_ai": {
+        "type": "boolean",
+        "description": "Label media as AI-generated"
+      }
+    }
+  },
+  "headers": [
+    {
+      "Key": "Authorization",
+      "Value": "Bearer ${API_X_COM_BEARER_TOKEN}"
+    },
+    {
+      "Key": "Content-Type",
+      "Value": "application/json"
+    }
+  ],
+  "requiredVariables": [
+    "API_X_COM_BEARER_TOKEN"
+  ]
+}

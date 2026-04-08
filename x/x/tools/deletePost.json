@@ -1,0 +1,28 @@
+{
+  "name": "deletePost",
+  "title": "Delete Post",
+  "description": "Delete a post on X by tweet ID",
+  "method": 6,
+  "path": "/tweets/{id}",
+  "pathArgsJSONSchema": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "The tweet ID to delete"
+      }
+    },
+    "required": [
+      "id"
+    ]
+  },
+  "headers": [
+    {
+      "Key": "Authorization",
+      "Value": "Bearer ${API_X_COM_BEARER_TOKEN}"
+    }
+  ],
+  "requiredVariables": [
+    "API_X_COM_BEARER_TOKEN"
+  ]
+}
