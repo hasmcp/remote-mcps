@@ -22,7 +22,7 @@ Search recent posts on X. Supports operators like from:user, #hashtag, -is:retwe
     },
     "max_results": {
       "description": "Number of results (10-100, default 10)",
-      "type": "integer"
+      "type": "number"
     },
     "media.fields": {
       "description": "Comma-separated media fields (requires expansions=attachments.media_keys): url,type,width,height",

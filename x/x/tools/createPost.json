@@ -4,6 +4,8 @@
   "description": "Create a new post on X. At least one of text, media, or poll must be provided.",
   "method": 3,
   "path": "/tweets",
+  "pathArgsJSONSchema": null,
+  "queryArgsJSONSchema": null,
   "reqBodyJSONSchema": {
     "type": "object",
     "properties": {

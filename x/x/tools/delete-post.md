@@ -11,9 +11,10 @@ Delete a post on X by tweet ID
 
 ```json
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "id": {
-      "description": "The tweet ID to delete",
+      "description": "id",
       "type": "string"
     }
   },

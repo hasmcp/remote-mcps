@@ -1,10 +1,10 @@
 {
   "name": "x",
   "description": "",
-  "instructions": "## X (Twitter) MCP Server\n\nThis server allows you to interact with X (Twitter) via the API v2.\n\n### Tools\n- **searchPosts**: Search recent posts using a query string. Supports standard X search operators (from:user, #hashtag, etc.)\n- **createPost**: Post a new tweet (max 280 chars). Can reply to existing tweets.\n- **deletePost**: Delete a tweet by its ID.\n\n### Authentication\nRequires a valid Bearer token set in `API_X_COM_BEARER_TOKEN` variable.",
+  "instructions": "## X (Twitter) MCP Server\n\nThis server allows you to interact with X (Twitter) via the API v2.\n\n### Tools\n- **searchPosts**: Search recent posts using a query string. Supports standard X search operators (from:user, #hashtag, etc.)\n- **createPost**: Post a new tweet (max 280 chars). Can reply to existing tweets.\n- **deletePost**: Delete a tweet by its ID.\n",
   "requestHeadersProxyEnabled": false,
   "dynamicToolDiscoveryEnabled": false,
-  "version": 3,
+  "version": 4,
   "gitProvider": "github",
   "gitRepoFullName": "hasmcp/remote-mcps",
   "providers": [
@@ -18,32 +18,13 @@
       "description": "X Twitter API v2",
       "tools": [
         {
-          "method": 1,
-          "path": "/tweets/search/recent",
-          "name": "searchPosts",
-          "title": "Search Recent Posts",
-          "description": "Search recent posts on X. Supports operators like from:user, #hashtag, -is:retweet.",
-          "queryArgsJSONSchema": "ImV5SjBlWEJsSWpvaWIySnFaV04wSWl3aWNISnZjR1Z5ZEdsbGN5STZleUp4ZFdWeWVTSTZleUowZVhCbElqb2ljM1J5YVc1bklpd2laR1Z6WTNKcGNIUnBiMjRpT2lKVFpXRnlZMmdnY1hWbGNua2djM1J5YVc1bklDaHlaWEYxYVhKbFpDd2diV0Y0SURRd09UWWdZMmhoY25NcExpQlRkWEJ3YjNKMGN5QnZjR1Z5WVhSdmNuTTZJR1p5YjIwNmRYTmxjaXdnZEc4NmRYTmxjaXdnSTJoaGMyaDBZV2NzSUhWeWJEcGtiMjFoYVc0c0lHbHpPbkpsZEhkbFpYUXNJR2hoY3pwdFpXUnBZU3dnYkdGdVp6cGxiaXdnWlhSakxpSjlMQ0p0WVhoZmNtVnpkV3gwY3lJNmV5SjBlWEJsSWpvaWFXNTBaV2RsY2lJc0ltUmxjMk55YVhCMGFXOXVJam9pVG5WdFltVnlJRzltSUhKbGMzVnNkSE1nS0RFd0xURXdNQ3dnWkdWbVlYVnNkQ0F4TUNraWZTd2ljM1JoY25SZmRHbHRaU0k2ZXlKMGVYQmxJam9pYzNSeWFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSlBiR1JsYzNRZ1ZWUkRJSFJwYldWemRHRnRjQ0FvU1ZOUElEZzJNREU2SUZsWldWa3RUVTB0UkVSVVNFZzZiVzA2YzNOYUtTSjlMQ0psYm1SZmRHbHRaU0k2ZXlKMGVYQmxJam9pYzNSeWFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSk9aWGRsYzNRZ1ZWUkRJSFJwYldWemRHRnRjQ0FvU1ZOUElEZzJNREU2SUZsWldWa3RUVTB0UkVSVVNFZzZiVzA2YzNOYUtTSjlMQ0p6YVc1alpWOXBaQ0k2ZXlKMGVYQmxJam9pYzNSeWFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSlNaWFIxY200Z2NHOXpkSE1nYlc5eVpTQnlaV05sYm5RZ2RHaGhiaUIwYUdseklIUjNaV1YwSUVsRUluMHNJblZ1ZEdsc1gybGtJanA3SW5SNWNHVWlPaUp6ZEhKcGJtY2lMQ0prWlhOamNtbHdkR2x2YmlJNklsSmxkSFZ5YmlCd2IzTjBjeUJ2YkdSbGNpQjBhR0Z1SUhSb2FYTWdkSGRsWlhRZ1NVUWlmU3dpYm1WNGRGOTBiMnRsYmlJNmV5SjBlWEJsSWpvaWMzUnlhVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUpRWVdkcGJtRjBhVzl1SUhSdmEyVnVJR1p2Y2lCdVpYaDBJSEJoWjJVZ0tHWnliMjBnY0hKbGRtbHZkWE1nY21WemNHOXVjMlVwSW4wc0luTnZjblJmYjNKa1pYSWlPbnNpZEhsd1pTSTZJbk4wY21sdVp5SXNJbVJsYzJOeWFYQjBhVzl1SWpvaVUyOXlkQ0J2Y21SbGNqb2djbVZqWlc1amVTQnZjaUJ5Wld4bGRtRnVZM2tpZlN3aWRIZGxaWFF1Wm1sbGJHUnpJanA3SW5SNWNHVWlPaUp6ZEhKcGJtY2lMQ0prWlhOamNtbHdkR2x2YmlJNklrTnZiVzFoTFhObGNHRnlZWFJsWkNCMGQyVmxkQ0JtYVdWc1pITTZJR2xrTEhSbGVIUXNZM0psWVhSbFpGOWhkQ3hoZFhSb2IzSmZhV1FzY0hWaWJHbGpYMjFsZEhKcFkzTXNaVzUwYVhScFpYTXNiR0Z1Wnl4aGRIUmhZMmh0Wlc1MGN5SjlMQ0psZUhCaGJuTnBiMjV6SWpwN0luUjVjR1VpT2lKemRISnBibWNpTENKa1pYTmpjbWx3ZEdsdmJpSTZJa052YlcxaExYTmxjR0Z5WVhSbFpDQmxlSEJoYm5OcGIyNXpPaUJoZFhSb2IzSmZhV1FzWVhSMFlXTm9iV1Z1ZEhNdWJXVmthV0ZmYTJWNWN5eHlaV1psY21WdVkyVmtYM1IzWldWMGN5NXBaQ0o5TENKMWMyVnlMbVpwWld4a2N5STZleUowZVhCbElqb2ljM1J5YVc1bklpd2laR1Z6WTNKcGNIUnBiMjRpT2lKRGIyMXRZUzF6WlhCaGNtRjBaV1FnZFhObGNpQm1hV1ZzWkhNZ0tISmxjWFZwY21WeklHVjRjR0Z1YzJsdmJuTTlZWFYwYUc5eVgybGtLVG9nYm1GdFpTeDFjMlZ5Ym1GdFpTeDJaWEpwWm1sbFpDeHdkV0pzYVdOZmJXVjBjbWxqY3lKOUxDSnRaV1JwWVM1bWFXVnNaSE1pT25zaWRIbHdaU0k2SW5OMGNtbHVaeUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lRMjl0YldFdGMyVndZWEpoZEdWa0lHMWxaR2xoSUdacFpXeGtjeUFvY21WeGRXbHlaWE1nWlhod1lXNXphVzl1Y3oxaGRIUmhZMmh0Wlc1MGN5NXRaV1JwWVY5clpYbHpLVG9nZFhKc0xIUjVjR1VzZDJsa2RHZ3NhR1ZwWjJoMEluMHNJbkJzWVdObExtWnBaV3hrY3lJNmV5SjBlWEJsSWpvaWMzUnlhVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUpEYjIxdFlTMXpaWEJoY21GMFpXUWdjR3hoWTJVZ1ptbGxiR1J6T2lCcFpDeG1kV3hzWDI1aGJXVXNZMjkxYm5SeWVWOWpiMlJsTEhCc1lXTmxYM1I1Y0dVaWZTd2ljRzlzYkM1bWFXVnNaSE1pT25zaWRIbHdaU0k2SW5OMGNtbHVaeUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lRMjl0YldFdGMyVndZWEpoZEdWa0lIQnZiR3dnWm1sbGJHUnpPaUJwWkN4dmNIUnBiMjV6TEhadmRHbHVaMTl6ZEdGMGRYTXNaSFZ5WVhScGIyNWZiV2x1ZFhSbGN5SjlmU3dpY21WeGRXbHlaV1FpT2xzaWNYVmxjbmtpWFgwPSI=",
-          "headers": [
-            {
-              "key": "Authorization",
-              "value": "Bearer ${API_X_COM_BEARER_TOKEN}"
-            }
-          ],
-          "oauth2Scopes": [
-            ""
-          ],
-          "hints": [
-            ""
-          ],
-          "interceptors": null
-        },
-        {
           "method": 3,
           "path": "/tweets",
           "name": "createPost",
           "title": "Create Post",
           "description": "Create a new post on X. At least one of text, media, or poll must be provided.",
+          "pathArgsJSONSchema": "ImJuVnNiQT09Ig==",
+          "queryArgsJSONSchema": "ImJuVnNiQT09Ig==",
           "reqBodyJSONSchema": "ImV5SjBlWEJsSWpvaWIySnFaV04wSWl3aWNISnZjR1Z5ZEdsbGN5STZleUowWlhoMElqcDdJblI1Y0dVaU9pSnpkSEpwYm1jaUxDSmtaWE5qY21sd2RHbHZiaUk2SWxSM1pXVjBJSFJsZUhRZ1kyOXVkR1Z1ZENBb2JXRjRJREk0TUNCamFHRnljeWtpZlN3aWNtVndiSGtpT25zaWRIbHdaU0k2SW05aWFtVmpkQ0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lVbVZ3YkhrZ1kyOXVabWxuZFhKaGRHbHZiaUlzSW5CeWIzQmxjblJwWlhNaU9uc2lhVzVmY21Wd2JIbGZkRzlmZEhkbFpYUmZhV1FpT25zaWRIbHdaU0k2SW5OMGNtbHVaeUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lWSGRsWlhRZ1NVUWdkRzhnY21Wd2JIa2dkRzhnS0RFdE1Ua2daR2xuYVhSektTSjlMQ0psZUdOc2RXUmxYM0psY0d4NVgzVnpaWEpmYVdSeklqcDdJblI1Y0dVaU9pSmhjbkpoZVNJc0ltbDBaVzF6SWpwN0luUjVjR1VpT2lKemRISnBibWNpZlN3aVpHVnpZM0pwY0hScGIyNGlPaUpWYzJWeUlFbEVjeUIwYnlCbGVHTnNkV1JsSUdaeWIyMGdjbVZ3YkhrZ2RHaHlaV0ZrSW4xOWZTd2ljWFZ2ZEdWZmRIZGxaWFJmYVdRaU9uc2lkSGx3WlNJNkluTjBjbWx1WnlJc0ltUmxjMk55YVhCMGFXOXVJam9pVkhkbFpYUWdTVVFnZEc4Z2NYVnZkR1VnS0RFdE1Ua2daR2xuYVhSektTNGdUWFYwZFdGc2JIa2daWGhqYkhWemFYWmxJSGRwZEdnZ2JXVmthV0VzSUhCdmJHd3NJR05oY21SZmRYSnBMaUo5TENKeVpYQnNlVjl6WlhSMGFXNW5jeUk2ZXlKMGVYQmxJam9pYzNSeWFXNW5JaXdpWkdWelkzSnBjSFJwYjI0aU9pSlhhRzhnWTJGdUlISmxjR3g1T2lCbWIyeHNiM2RwYm1jc0lHMWxiblJwYjI1bFpGVnpaWEp6TENCemRXSnpZM0pwWW1WeWN5d2diM0lnZG1WeWFXWnBaV1FpZlN3aWJXVmthV0VpT25zaWRIbHdaU0k2SW05aWFtVmpkQ0lzSW1SbGMyTnlhWEIwYVc5dUlqb2lUV1ZrYVdFZ1lYUjBZV05vYldWdWRDNGdUWFYwZFdGc2JIa2daWGhqYkhWemFYWmxJSGRwZEdnZ2NHOXNiQ3dnY1hWdmRHVmZkSGRsWlhSZmFXUXNJR05oY21SZmRYSnBMaUlzSW5CeWIzQmxjblJwWlhNaU9uc2liV1ZrYVdGZmFXUnpJanA3SW5SNWNHVWlPaUpoY25KaGVTSXNJbWwwWlcxeklqcDdJblI1Y0dVaU9pSnpkSEpwYm1jaWZTd2laR1Z6WTNKcGNIUnBiMjRpT2lJeExUUWdiV1ZrYVdFZ1NVUnpJSFJ2SUdGMGRHRmphQ0o5TENKMFlXZG5aV1JmZFhObGNsOXBaSE1pT25zaWRIbHdaU0k2SW1GeWNtRjVJaXdpYVhSbGJYTWlPbnNpZEhsd1pTSTZJbk4wY21sdVp5SjlMQ0prWlhOamNtbHdkR2x2YmlJNklqQXRNVEFnZFhObGNpQkpSSE1nZEc4Z2RHRm5JR2x1SUcxbFpHbGhJbjE5ZlN3aWNHOXNiQ0k2ZXlKMGVYQmxJam9pYjJKcVpXTjBJaXdpWkdWelkzSnBjSFJwYjI0aU9pSlFiMnhzSUdOdmJtWnBaM1Z5WVhScGIyNHVJRTExZEhWaGJHeDVJR1Y0WTJ4MWMybDJaU0IzYVhSb0lHMWxaR2xoTENCeGRXOTBaVjkwZDJWbGRGOXBaQ3dnWTJGeVpGOTFjbWt1SWl3aWNISnZjR1Z5ZEdsbGN5STZleUp2Y0hScGIyNXpJanA3SW5SNWNHVWlPaUpoY25KaGVTSXNJbWwwWlcxeklqcDdJblI1Y0dVaU9pSnpkSEpwYm1jaWZTd2laR1Z6WTNKcGNIUnBiMjRpT2lJeUxUUWdjRzlzYkNCdmNIUnBiMjV6SUNobFlXTm9JREV0TWpVZ1kyaGhjbk1wSW4wc0ltUjFjbUYwYVc5dVgyMXBiblYwWlhNaU9uc2lkSGx3WlNJNkltbHVkR1ZuWlhJaUxDSmtaWE5qY21sd2RHbHZiaUk2SWxCdmJHd2daSFZ5WVhScGIyNGdhVzRnYldsdWRYUmxjeUFvTlMweE1EQTRNQ2tpZlN3aWNtVndiSGxmYzJWMGRHbHVaM01pT25zaWRIbHdaU0k2SW5OMGNtbHVaeUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lWMmh2SUdOaGJpQnlaWEJzZVRvZ1ptOXNiRzkzYVc1bkxDQnRaVzUwYVc5dVpXUlZjMlZ5Y3l3Z2MzVmljMk55YVdKbGNuTXNJSFpsY21sbWFXVmtJbjE5ZlN3aVoyVnZJanA3SW5SNWNHVWlPaUp2WW1wbFkzUWlMQ0prWlhOamNtbHdkR2x2YmlJNklreHZZMkYwYVc5dUlIUmhaeUlzSW5CeWIzQmxjblJwWlhNaU9uc2ljR3hoWTJWZmFXUWlPbnNpZEhsd1pTSTZJbk4wY21sdVp5SXNJbVJsYzJOeWFYQjBhVzl1SWpvaVVHeGhZMlVnU1VRZ2RHOGdkR0ZuSW4xOWZTd2labTl5WDNOMWNHVnlYMlp2Ykd4dmQyVnljMTl2Ym14NUlqcDdJblI1Y0dVaU9pSmliMjlzWldGdUlpd2laR1Z6WTNKcGNIUnBiMjRpT2lKTWFXMXBkQ0J3YjNOMElIWnBjMmxpYVd4cGRIa2dkRzhnVTNWd1pYSWdSbTlzYkc5M1pYSnpJRzl1YkhraWZTd2liblZzYkdOaGMzUWlPbnNpZEhsd1pTSTZJbUp2YjJ4bFlXNGlMQ0prWlhOamNtbHdkR2x2YmlJNklrUnZJRzV2ZENCcGJtTnNkV1JsSUdsdUlIQjFZbXhwWXlCMGFXMWxiR2x1WlNBb1VISnZiVzkwWldRdGIyNXNlU2tpZlN3aWJXRmtaVjkzYVhSb1gyRnBJanA3SW5SNWNHVWlPaUppYjI5c1pXRnVJaXdpWkdWelkzSnBjSFJwYjI0aU9pSk1ZV0psYkNCdFpXUnBZU0JoY3lCQlNTMW5aVzVsY21GMFpXUWlmWDE5Ig==",
           "headers": [
             {
@@ -59,7 +40,8 @@
             ""
           ],
           "hints": [
-            ""
+            "destructiveHint",
+            "openWorldHint"
           ],
           "interceptors": null
         },
@@ -69,7 +51,9 @@
           "name": "deletePost",
           "title": "Delete Post",
           "description": "Delete a post on X by tweet ID",
-          "pathArgsJSONSchema": "ImV5SjBlWEJsSWpvaWIySnFaV04wSWl3aWNISnZjR1Z5ZEdsbGN5STZleUpwWkNJNmV5SjBlWEJsSWpvaWMzUnlhVzVuSWl3aVpHVnpZM0pwY0hScGIyNGlPaUpVYUdVZ2RIZGxaWFFnU1VRZ2RHOGdaR1ZzWlhSbEluMTlMQ0p5WlhGMWFYSmxaQ0k2V3lKcFpDSmRmUT09Ig==",
+          "pathArgsJSONSchema": "ImV5SWtjMk5vWlcxaElqb2lhSFIwY0RvdkwycHpiMjR0YzJOb1pXMWhMbTl5Wnk5a2NtRm1kQzB3Tnk5elkyaGxiV0VqSWl3aWRIbHdaU0k2SW05aWFtVmpkQ0lzSW5CeWIzQmxjblJwWlhNaU9uc2lhV1FpT25zaWRIbHdaU0k2SW5OMGNtbHVaeUlzSW1SbGMyTnlhWEIwYVc5dUlqb2lhV1FpZlgwc0luSmxjWFZwY21Wa0lqcGJJbWxrSWwxOSI=",
+          "queryArgsJSONSchema": "ImJuVnNiQT09Ig==",
+          "reqBodyJSONSchema": "ImJuVnNiQT09Ig==",
           "headers": [
             {
               "key": "Authorization",
@@ -80,7 +64,32 @@
             ""
           ],
           "hints": [
+            "destructiveHint",
+            "openWorldHint"
+          ],
+          "interceptors": null
+        },
+        {
+          "method": 1,
+          "path": "/tweets/search/recent",
+          "name": "searchPosts",
+          "title": "Search Recent Posts",
+          "description": "Search recent posts on X. Supports operators like from:user, #hashtag, -is:retweet.",
+          "pathArgsJSONSchema": "ImJuVnNiQT09Ig==",
+          "queryArgsJSONSchema": "ImV5SjBlWEJsSWpvaWIySnFaV04wSWl3aWNISnZjR1Z5ZEdsbGN5STZleUp4ZFdWeWVTSTZleUprWlhOamNtbHdkR2x2YmlJNklsTmxZWEpqYUNCeGRXVnllU0J6ZEhKcGJtY2dLSEpsY1hWcGNtVmtMQ0J0WVhnZ05EQTVOaUJqYUdGeWN5a3VJRk4xY0hCdmNuUnpJRzl3WlhKaGRHOXljem9nWm5KdmJUcDFjMlZ5TENCMGJ6cDFjMlZ5TENBamFHRnphSFJoWnl3Z2RYSnNPbVJ2YldGcGJpd2dhWE02Y21WMGQyVmxkQ3dnYUdGek9tMWxaR2xoTENCc1lXNW5PbVZ1TENCbGRHTXVJaXdpZEhsd1pTSTZJbk4wY21sdVp5SjlMQ0p0WVhoZmNtVnpkV3gwY3lJNmV5SmtaWE5qY21sd2RHbHZiaUk2SWs1MWJXSmxjaUJ2WmlCeVpYTjFiSFJ6SUNneE1DMHhNREFzSUdSbFptRjFiSFFnTVRBcElpd2lkSGx3WlNJNkltNTFiV0psY2lKOUxDSnpkR0Z5ZEY5MGFXMWxJanA3SW1SbGMyTnlhWEIwYVc5dUlqb2lUMnhrWlhOMElGVlVReUIwYVcxbGMzUmhiWEFnS0VsVFR5QTROakF4T2lCWldWbFpMVTFOTFVSRVZFaElPbTF0T25Oeldpa2lMQ0owZVhCbElqb2ljM1J5YVc1bkluMHNJbVZ1WkY5MGFXMWxJanA3SW1SbGMyTnlhWEIwYVc5dUlqb2lUbVYzWlhOMElGVlVReUIwYVcxbGMzUmhiWEFnS0VsVFR5QTROakF4T2lCWldWbFpMVTFOTFVSRVZFaElPbTF0T25Oeldpa2lMQ0owZVhCbElqb2ljM1J5YVc1bkluMHNJbk5wYm1ObFgybGtJanA3SW1SbGMyTnlhWEIwYVc5dUlqb2lVbVYwZFhKdUlIQnZjM1J6SUcxdmNtVWdjbVZqWlc1MElIUm9ZVzRnZEdocGN5QjBkMlZsZENCSlJDSXNJblI1Y0dVaU9pSnpkSEpwYm1jaWZTd2lkVzUwYVd4ZmFXUWlPbnNpWkdWelkzSnBjSFJwYjI0aU9pSlNaWFIxY200Z2NHOXpkSE1nYjJ4a1pYSWdkR2hoYmlCMGFHbHpJSFIzWldWMElFbEVJaXdpZEhsd1pTSTZJbk4wY21sdVp5SjlMQ0p1WlhoMFgzUnZhMlZ1SWpwN0ltUmxjMk55YVhCMGFXOXVJam9pVUdGbmFXNWhkR2x2YmlCMGIydGxiaUJtYjNJZ2JtVjRkQ0J3WVdkbElDaG1jbTl0SUhCeVpYWnBiM1Z6SUhKbGMzQnZibk5sS1NJc0luUjVjR1VpT2lKemRISnBibWNpZlN3aWMyOXlkRjl2Y21SbGNpSTZleUprWlhOamNtbHdkR2x2YmlJNklsTnZjblFnYjNKa1pYSTZJSEpsWTJWdVkza2diM0lnY21Wc1pYWmhibU41SWl3aWRIbHdaU0k2SW5OMGNtbHVaeUo5TENKMGQyVmxkQzVtYVdWc1pITWlPbnNpWkdWelkzSnBjSFJwYjI0aU9pSkRiMjF0WVMxelpYQmhjbUYwWldRZ2RIZGxaWFFnWm1sbGJHUnpPaUJwWkN4MFpYaDBMR055WldGMFpXUmZZWFFzWVhWMGFHOXlYMmxrTEhCMVlteHBZMTl0WlhSeWFXTnpMR1Z1ZEdsMGFXVnpMR3hoYm1jc1lYUjBZV05vYldWdWRITWlMQ0owZVhCbElqb2ljM1J5YVc1bkluMHNJbVY0Y0dGdWMybHZibk1pT25zaVpHVnpZM0pwY0hScGIyNGlPaUpEYjIxdFlTMXpaWEJoY21GMFpXUWdaWGh3WVc1emFXOXVjem9nWVhWMGFHOXlYMmxrTEdGMGRHRmphRzFsYm5SekxtMWxaR2xoWDJ0bGVYTXNjbVZtWlhKbGJtTmxaRjkwZDJWbGRITXVhV1FpTENKMGVYQmxJam9pYzNSeWFXNW5JbjBzSW5WelpYSXVabWxsYkdSeklqcDdJbVJsYzJOeWFYQjBhVzl1SWpvaVEyOXRiV0V0YzJWd1lYSmhkR1ZrSUhWelpYSWdabWxsYkdSeklDaHlaWEYxYVhKbGN5QmxlSEJoYm5OcGIyNXpQV0YxZEdodmNsOXBaQ2s2SUc1aGJXVXNkWE5sY201aGJXVXNkbVZ5YVdacFpXUXNjSFZpYkdsalgyMWxkSEpwWTNNaUxDSjBlWEJsSWpvaWMzUnlhVzVuSW4wc0ltMWxaR2xoTG1acFpXeGtjeUk2ZXlKa1pYTmpjbWx3ZEdsdmJpSTZJa052YlcxaExYTmxjR0Z5WVhSbFpDQnRaV1JwWVNCbWFXVnNaSE1nS0hKbGNYVnBjbVZ6SUdWNGNHRnVjMmx2Ym5NOVlYUjBZV05vYldWdWRITXViV1ZrYVdGZmEyVjVjeWs2SUhWeWJDeDBlWEJsTEhkcFpIUm9MR2hsYVdkb2RDSXNJblI1Y0dVaU9pSnpkSEpwYm1jaWZTd2ljR3hoWTJVdVptbGxiR1J6SWpwN0ltUmxjMk55YVhCMGFXOXVJam9pUTI5dGJXRXRjMlZ3WVhKaGRHVmtJSEJzWVdObElHWnBaV3hrY3pvZ2FXUXNablZzYkY5dVlXMWxMR052ZFc1MGNubGZZMjlrWlN4d2JHRmpaVjkwZVhCbElpd2lkSGx3WlNJNkluTjBjbWx1WnlKOUxDSndiMnhzTG1acFpXeGtjeUk2ZXlKa1pYTmpjbWx3ZEdsdmJpSTZJa052YlcxaExYTmxjR0Z5WVhSbFpDQndiMnhzSUdacFpXeGtjem9nYVdRc2IzQjBhVzl1Y3l4MmIzUnBibWRmYzNSaGRIVnpMR1IxY21GMGFXOXVYMjFwYm5WMFpYTWlMQ0owZVhCbElqb2ljM1J5YVc1bkluMTlMQ0p5WlhGMWFYSmxaQ0k2V3lKeGRXVnllU0pkZlE9PSI=",
+          "reqBodyJSONSchema": "ImJuVnNiQT09Ig==",
+          "headers": [
+            {
+              "key": "Authorization",
+              "value": "Bearer ${API_X_COM_BEARER_TOKEN}"
+            }
+          ],
+          "oauth2Scopes": [
             ""
+          ],
+          "hints": [
+            "readOnlyHint",
+            "openWorldHint"
           ],
           "interceptors": null
         }

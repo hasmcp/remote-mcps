@@ -1,8 +1,8 @@
 {
   "dynamicToolDiscoveryEnabled": false,
-  "instructions": "## X (Twitter) MCP Server\n\nThis server allows you to interact with X (Twitter) via the API v2.\n\n### Tools\n- **searchPosts**: Search recent posts using a query string. Supports standard X search operators (from:user, #hashtag, etc.)\n- **createPost**: Post a new tweet (max 280 chars). Can reply to existing tweets.\n- **deletePost**: Delete a tweet by its ID.\n\n### Authentication\nRequires a valid Bearer token set in `API_X_COM_BEARER_TOKEN` variable.",
+  "instructions": "## X (Twitter) MCP Server\n\nThis server allows you to interact with X (Twitter) via the API v2.\n\n### Tools\n- **searchPosts**: Search recent posts using a query string. Supports standard X search operators (from:user, #hashtag, etc.)\n- **createPost**: Post a new tweet (max 280 chars). Can reply to existing tweets.\n- **deletePost**: Delete a tweet by its ID.\n",
   "name": "x",
   "requestHeadersProxyEnabled": false,
-  "version": 3,
+  "version": 4,
   "visibilityType": 2
 }

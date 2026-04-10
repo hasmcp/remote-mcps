@@ -4,70 +4,72 @@
   "description": "Search recent posts on X. Supports operators like from:user, #hashtag, -is:retweet.",
   "method": 1,
   "path": "/tweets/search/recent",
+  "pathArgsJSONSchema": null,
   "queryArgsJSONSchema": {
     "type": "object",
     "properties": {
       "query": {
-        "type": "string",
-        "description": "Search query string (required, max 4096 chars). Supports operators: from:user, to:user, #hashtag, url:domain, is:retweet, has:media, lang:en, etc."
+        "description": "Search query string (required, max 4096 chars). Supports operators: from:user, to:user, #hashtag, url:domain, is:retweet, has:media, lang:en, etc.",
+        "type": "string"
       },
       "max_results": {
-        "type": "integer",
-        "description": "Number of results (10-100, default 10)"
+        "description": "Number of results (10-100, default 10)",
+        "type": "number"
       },
       "start_time": {
-        "type": "string",
-        "description": "Oldest UTC timestamp (ISO 8601: YYYY-MM-DDTHH:mm:ssZ)"
+        "description": "Oldest UTC timestamp (ISO 8601: YYYY-MM-DDTHH:mm:ssZ)",
+        "type": "string"
       },
       "end_time": {
-        "type": "string",
-        "description": "Newest UTC timestamp (ISO 8601: YYYY-MM-DDTHH:mm:ssZ)"
+        "description": "Newest UTC timestamp (ISO 8601: YYYY-MM-DDTHH:mm:ssZ)",
+        "type": "string"
       },
       "since_id": {
-        "type": "string",
-        "description": "Return posts more recent than this tweet ID"
+        "description": "Return posts more recent than this tweet ID",
+        "type": "string"
       },
       "until_id": {
-        "type": "string",
-        "description": "Return posts older than this tweet ID"
+        "description": "Return posts older than this tweet ID",
+        "type": "string"
       },
       "next_token": {
-        "type": "string",
-        "description": "Pagination token for next page (from previous response)"
+        "description": "Pagination token for next page (from previous response)",
+        "type": "string"
       },
       "sort_order": {
-        "type": "string",
-        "description": "Sort order: recency or relevancy"
+        "description": "Sort order: recency or relevancy",
+        "type": "string"
       },
       "tweet.fields": {
-        "type": "string",
-        "description": "Comma-separated tweet fields: id,text,created_at,author_id,public_metrics,entities,lang,attachments"
+        "description": "Comma-separated tweet fields: id,text,created_at,author_id,public_metrics,entities,lang,attachments",
+        "type": "string"
       },
       "expansions": {
-        "type": "string",
-        "description": "Comma-separated expansions: author_id,attachments.media_keys,referenced_tweets.id"
+        "description": "Comma-separated expansions: author_id,attachments.media_keys,referenced_tweets.id",
+        "type": "string"
       },
       "user.fields": {
-        "type": "string",
-        "description": "Comma-separated user fields (requires expansions=author_id): name,username,verified,public_metrics"
+        "description": "Comma-separated user fields (requires expansions=author_id): name,username,verified,public_metrics",
+        "type": "string"
       },
       "media.fields": {
-        "type": "string",
-        "description": "Comma-separated media fields (requires expansions=attachments.media_keys): url,type,width,height"
+        "description": "Comma-separated media fields (requires expansions=attachments.media_keys): url,type,width,height",
+        "type": "string"
       },
       "place.fields": {
-        "type": "string",
-        "description": "Comma-separated place fields: id,full_name,country_code,place_type"
+        "description": "Comma-separated place fields: id,full_name,country_code,place_type",
+        "type": "string"
       },
       "poll.fields": {
-        "type": "string",
-        "description": "Comma-separated poll fields: id,options,voting_status,duration_minutes"
+        "description": "Comma-separated poll fields: id,options,voting_status,duration_minutes",
+        "type": "string"
       }
     },
     "required": [
       "query"
     ]
   },
+  "reqBodyJSONSchema": null,
   "headers": [
     {
       "Key": "Authorization",
