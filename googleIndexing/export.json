@@ -1,0 +1,50 @@
+{
+  "name": "googleIndexing",
+  "description": "",
+  "instructions": "Guidelines\n- For URL updates and new URL submissions use URL_UPDATED as type value.\n- For URL removals use URL_DELETED as type value.\n",
+  "requestHeadersProxyEnabled": false,
+  "dynamicToolDiscoveryEnabled": false,
+  "version": 4,
+  "gitProvider": "",
+  "gitRepoFullName": "",
+  "providers": [
+    {
+      "apiType": 1,
+      "visibilityType": 2,
+      "baseURL": "https://indexing.googleapis.com/v3",
+      "documentURL": "https://developers.google.com/search/apis/indexing-api/v3/using-api",
+      "iconURL": "https://icons.hasmcp.com/icons/providers/09dmxxmZ6jy/icon.png",
+      "name": "googleIndexing",
+      "description": "_",
+      "tools": [
+        {
+          "method": 3,
+          "path": "/urlNotifications:publish",
+          "name": "submitToGoogleIndex",
+          "title": "SubmitToGoogleIndex",
+          "description": "Notifies that a URL has been updated or deleted.",
+          "pathArgsJSONSchema": "ImJuVnNiQT09Ig==",
+          "queryArgsJSONSchema": "ImJuVnNiQT09Ig==",
+          "reqBodyJSONSchema": "ImV5SWtjMk5vWlcxaElqb2lhSFIwY0RvdkwycHpiMjR0YzJOb1pXMWhMbTl5Wnk5a2NtRm1kQzB3Tnk5elkyaGxiV0VqSWl3aWRHbDBiR1VpT2lKVGRXSnRhWFJVYjBkdmIyZHNaVWx1WkdWNElpd2laR1Z6WTNKcGNIUnBiMjRpT2lKT2IzUnBabWxsY3lCMGFHRjBJR0VnVlZKTUlHaGhjeUJpWldWdUlIVndaR0YwWldRZ2IzSWdaR1ZzWlhSbFpDNGlMQ0owZVhCbElqb2liMkpxWldOMElpd2ljSEp2Y0dWeWRHbGxjeUk2ZXlKMWNtd2lPbnNpZEhsd1pTSTZJbk4wY21sdVp5SXNJbVJsYzJOeWFYQjBhVzl1SWpvaVZWSk1JSFJ2SUdKbElITjFZbTFwZEhSbFpDQjBieUJIYjI5bmJHVWlmU3dpZEhsd1pTSTZleUowZVhCbElqb2ljM1J5YVc1bklpd2laR1Z6WTNKcGNIUnBiMjRpT2lKVmMyVWdWVkpNWDFWUVJFRlVSVVFnWm05eUlIVndaR0YwWlNCaGJtUWdZM0psWVhSbExpQlZjMlVnVlZKTVgwUkZURVZVUlVRZ1ptOXlJSFZ5YkNCeVpXMXZkbUZzY3k0aWZYMHNJbkpsY1hWcGNtVmtJanBiSW5WeWJDSXNJblI1Y0dVaVhYMD0i",
+          "headers": [
+            {
+              "key": "Authorization",
+              "value": "Bearer ${INDEXING_GOOGLEAPIS_COM_ACCESS_TOKEN}"
+            }
+          ],
+          "oauth2Scopes": [
+            "https://www.googleapis.com/auth/indexing"
+          ],
+          "hints": [
+            "destructiveHint",
+            "openWorldHint",
+            "idempotentHint"
+          ],
+          "interceptors": null
+        }
+      ],
+      "resources": [],
+      "prompts": []
+    }
+  ]
+}

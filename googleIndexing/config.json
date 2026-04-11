@@ -1,0 +1,8 @@
+{
+  "dynamicToolDiscoveryEnabled": false,
+  "instructions": "Guidelines\n- For URL updates and new URL submissions use URL_UPDATED as type value.\n- For URL removals use URL_DELETED as type value.\n",
+  "name": "googleIndexing",
+  "requestHeadersProxyEnabled": false,
+  "version": 4,
+  "visibilityType": 2
+}

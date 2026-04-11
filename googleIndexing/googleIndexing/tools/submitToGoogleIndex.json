@@ -1,0 +1,39 @@
+{
+  "name": "submitToGoogleIndex",
+  "title": "SubmitToGoogleIndex",
+  "description": "Notifies that a URL has been updated or deleted.",
+  "method": 3,
+  "path": "/urlNotifications:publish",
+  "pathArgsJSONSchema": null,
+  "queryArgsJSONSchema": null,
+  "reqBodyJSONSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SubmitToGoogleIndex",
+    "description": "Notifies that a URL has been updated or deleted.",
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "description": "URL to be submitted to Google"
+      },
+      "type": {
+        "type": "string",
+        "description": "Use URL_UPDATED for update and create. Use URL_DELETED for url removals."
+      }
+    },
+    "required": [
+      "url",
+      "type"
+    ]
+  },
+  "headers": [
+    {
+      "Key": "Authorization",
+      "Value": "Bearer ${INDEXING_GOOGLEAPIS_COM_ACCESS_TOKEN}"
+    }
+  ],
+  "oauth2Scopes": "https://www.googleapis.com/auth/indexing",
+  "requiredVariables": [
+    "INDEXING_GOOGLEAPIS_COM_ACCESS_TOKEN"
+  ]
+}
