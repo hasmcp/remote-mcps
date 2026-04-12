@@ -4,9 +4,9 @@
   "instructions": "Guidelines\n- For URL updates and new URL submissions use URL_UPDATED as type value.\n- For URL removals use URL_DELETED as type value.\n",
   "requestHeadersProxyEnabled": false,
   "dynamicToolDiscoveryEnabled": false,
-  "version": 4,
-  "gitProvider": "",
-  "gitRepoFullName": "",
+  "version": 5,
+  "gitProvider": "github",
+  "gitRepoFullName": "hasmcp/remote-mcps",
   "providers": [
     {
       "apiType": 1,
@@ -16,6 +16,12 @@
       "iconURL": "https://icons.hasmcp.com/icons/providers/09dmxxmZ6jy/icon.png",
       "name": "googleIndexing",
       "description": "_",
+      "oauth2Config": {
+        "authURL": "https://accounts.google.com/o/oauth2/v2/auth",
+        "tokenURL": "https://oauth2.googleapis.com/token",
+        "clientID": "YOUR_OAUTH_CLIENT_ID",
+        "clientSecret": "YOUR_OAUTH_CLIENT_SECRET"
+      },
       "tools": [
         {
           "method": 3,

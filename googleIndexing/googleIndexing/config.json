@@ -8,7 +8,9 @@
   "secretPrefix": "INDEXING_GOOGLEAPIS_COM",
   "verificationStatus": 1,
   "apiType": 1,
-  "oauth2Enabled": false,
+  "oauth2Enabled": true,
   "oauth2ClientID": "***",
-  "oauth2ClientSecret": "***"
+  "oauth2ClientSecret": "***",
+  "oauth2AuthURL": "https://accounts.google.com/o/oauth2/v2/auth",
+  "oauth2TokenURL": "https://oauth2.googleapis.com/token"
 }

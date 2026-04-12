@@ -4,7 +4,7 @@ _
 
 **Base URL:** `https://indexing.googleapis.com/v3`
 
-**OAuth2:** ❌ Not available
+**OAuth2:** ✅ Enabled
 
 **Documentation:** [https://developers.google.com/search/apis/indexing-api/v3/using-api](https://developers.google.com/search/apis/indexing-api/v3/using-api)
 
